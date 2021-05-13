@@ -20,18 +20,15 @@ class Window(QWidget):
         self.widget_btn_1 = QWidget(self.main_widget)
         self.widget_btn_1.setGeometry(0,0,500,60)
         self.widget_btn_1.setStyleSheet('background-color: white; border-bottom:1px solid blue;')
-        
-        self.pb_1 = QPushButton('Button 1', self.widget_btn_1)
-        self.pb_1.setGeometry(10,10,80,40)
-        self.pb_1.setStyleSheet('background-color: white; border:1px solid black; color: black;')
-        
-        self.pb_2 = QPushButton('Button 2', self.widget_btn_1)
-        self.pb_2.setGeometry(100,10,80,40)
-        self.pb_2.setStyleSheet('background-color: white; border:1px solid black; color: black;')
-        
-        self.pb_1.clicked.connect(lambda num: self.button_function(1))
-        self.pb_2.clicked.connect(lambda num: self.button_function(2))
-        
+
+        self.pb = []
+        for i in range(0, 3):
+            self.pb.append(QPushButton("Button "+str(i+1), self.widget_btn_1))
+            self.pb[i].setGeometry(10 + 90*i, 10,80,40)
+            self.pb[i].setStyleSheet('background-color: white; border:1px solid black; color: black;')
+            self.pb[i].clicked.connect(lambda _, num=i: self.button_function(num+1))
+            #self.pb[i].clicked.connect(lambda num: self.button_function(i+1))  ##wrong
+            
     def button_function(self, i):
         print('clicked : '+ str(i))
     
