@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel
 
 class Window(QWidget):
     def __init__(self):
@@ -28,9 +28,19 @@ class Window(QWidget):
             self.pb[i].setStyleSheet('background-color: white; border:1px solid black; color: black;')
             self.pb[i].clicked.connect(lambda _, num=i: self.button_function(num+1))
             #self.pb[i].clicked.connect(lambda num: self.button_function(i+1))  ##wrong
-            
+        
+        self.widget_label_1 = QWidget(self.main_widget)
+        self.widget_label_1.setGeometry(0,60,500,70)
+        self.widget_label_1.setStyleSheet('background-color: skyblue;')
+        
+        self.label_1 = QLabel(self.widget_label_1)
+        self.label_1.setGeometry(10,20,240, 30)
+        self.label_1.setStyleSheet('background-color: white; border:1px solid black;')
+        self.label_1.setText('0')
+        
     def button_function(self, i):
         print('clicked : '+ str(i))
+        self.label_1.setText('Button '+str(i)+' clicked !')
     
 def StartGUI():
     app = QApplication(sys.argv)
