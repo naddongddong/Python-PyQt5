@@ -1,7 +1,39 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel
 
+import sys
+from Values import GlobalValue as GV
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel
+from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot
+from time import sleep
+
+class BackWork(QThread):
+    emitdata = pyqtSignal(int)
+    
+    def __init__(self, parent=None):
+        super().__init__()
+        self.isloop = True           
+           
+    def run(self):
+        print(GV.start_num)
+        self.count_work()
+        
+    def count_work(self):
+        self.num = GV.start_num
+        while(self.isloop):
+            self.emitdata.emit(self.num)
+            self.num += 1
+            sleep(0.1)
+            
+    @pyqtSlot(int, int)
+    def stop_BW(self, i, saved_num):
+        if i == 1:
+            self.isloop = False
+            self.quit()
+            self.wait(5000)
+        GV.start_num = saved_num
+            
 class Window(QWidget):
+    stop_signal_BW = pyqtSignal(int, int)
+    
     def __init__(self):
         super(Window, self).__init__()
         self.setWindowTitle("Window title")
@@ -11,6 +43,7 @@ class Window(QWidget):
         self.Main_Widget()
         
         self.show()
+
         
     def Main_Widget(self):
         self.main_widget = QWidget(self)
@@ -25,9 +58,12 @@ class Window(QWidget):
         for i in range(0, 3):
             self.pb.append(QPushButton("Button "+str(i+1), self.widget_btn_1))
             self.pb[i].setGeometry(10 + 90*i, 10,80,40)
-            self.pb[i].setStyleSheet('background-color: white; border:1px solid black; color: black;')
+            #self.pb[i].setStyleSheet('background-color: white; border:1px solid black; color: black;')
             self.pb[i].clicked.connect(lambda _, num=i: self.button_function(num+1))
             #self.pb[i].clicked.connect(lambda num: self.button_function(i+1))  ##wrong
+        self.pb[0].setText('Start')
+        self.pb[1].setText('Stop')
+        self.pb[1].setEnabled(False)
         
         self.widget_label_1 = QWidget(self.main_widget)
         self.widget_label_1.setGeometry(0,60,500,70)
@@ -39,9 +75,25 @@ class Window(QWidget):
         self.label_1.setText('0')
         
     def button_function(self, i):
-        print('clicked : '+ str(i))
-        self.label_1.setText('Button '+str(i)+' clicked !')
-    
+        if i == 1:
+            self.BW = BackWork()
+            self.BW.emitdata.connect(self.label_1_count_num)
+            self.stop_signal_BW.connect(self.BW.stop_BW)
+            self.BW.start()
+            self.pb[0].setEnabled(False)
+            self.pb[1].setEnabled(True)
+            self.pb[2].setEnabled(False)
+        elif i == 2:
+            self.stop_signal_BW.emit(1, int(self.label_1.text()))
+            self.pb[0].setEnabled(True)
+            self.pb[1].setEnabled(False)
+            self.pb[2].setEnabled(True)
+            
+        
+    @pyqtSlot(int)
+    def label_1_count_num(self, num):
+        self.label_1.setText(str(num))
+        
 def StartGUI():
     app = QApplication(sys.argv)
     temp = Window()
