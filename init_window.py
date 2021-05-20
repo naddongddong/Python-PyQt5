@@ -1,6 +1,6 @@
 import sys
 from Values import GlobalValue as GV
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QMessageBox
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QMessageBox, QTabWidget
 from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt
 from time import sleep
 
@@ -40,18 +40,18 @@ class Window(QWidget):
         self.setFixedSize(500,400)
         
         self.Main_Widget()
-        
+        self.Sec_Widget()
         self.show()
 
         
     def Main_Widget(self):
         self.main_widget = QWidget(self)
         self.main_widget.setGeometry(0,0,500,400)
-        self.main_widget.setStyleSheet('background-color: #b0b0b0;')
+        self.main_widget.setStyleSheet('background-color: white;')
         
         self.widget_btn_1 = QWidget(self.main_widget)
         self.widget_btn_1.setGeometry(0,60,500,70)
-        self.widget_btn_1.setStyleSheet('background-color: white; border-bottom:1px solid blue;')
+        self.widget_btn_1.setStyleSheet('background-color: white; border-bottom:2px solid black; ')
 
         self.pb = []
         for i in range(0, 4):
@@ -68,13 +68,54 @@ class Window(QWidget):
         
         self.widget_label_1 = QWidget(self.main_widget)
         self.widget_label_1.setGeometry(0,0,500,60)
-        self.widget_label_1.setStyleSheet('background-color: skyblue;')
+        self.widget_label_1.setStyleSheet('background-color: white;')
         
         self.label_1 = QLabel(self.widget_label_1)
         self.label_1.setGeometry(10,20,150, 30)
         self.label_1.setStyleSheet('background-color: white; border:1px solid black;')
         self.label_1.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
         self.label_1.setText('0')
+        
+        self.tab1 = QWidget()
+        self.tab2 = QWidget()
+        
+        self.tabs = QTabWidget(self.main_widget)
+        self.tabs.setGeometry(0,150,500,200)
+        #self.tabs.setTabBar()
+        a = str('''
+            QTabWidget::pane {
+                border: 2px solid blue;
+                border-radius: 6px;
+            }
+            QTabWidget::tab-bar {
+                width:200px;
+                border:1px solid black;
+            }
+        ''')
+        self.tabs.setStyleSheet(a)
+        self.tabs.addTab(self.tab1, "Tab1")
+        self.tabs.addTab(self.tab2, "Tab2")
+        
+        self.tab1_label = QLabel(self.tab1)
+        self.tab1_label.setGeometry(10,10,200,20)
+        self.tab1_label.setText('Select Graph Button')
+        
+        self.tab1_btn_1 = QPushButton("Graph 1", self.tab1)
+        self.tab1_btn_1.setGeometry(10,50,200,30)
+        self.tab1_btn_1.setStyleSheet("background-color: #DFDFDF; border:1px solid black;")
+        self.tab1_btn_1.clicked.connect(lambda _, num=1: self.show_graph(num))
+        
+        self.tab1_btn_2 = QPushButton("Graph 2", self.tab1)
+        self.tab1_btn_2.setGeometry(220,50,200,30)
+        self.tab1_btn_2.setStyleSheet("background-color: #DFDFDF; border:1px solid black;")
+        self.tab1_btn_2.clicked.connect(lambda _, num=2: self.show_graph(num))
+        
+    def show_graph(self, n):
+        print(n)
+        if n == 1:
+            self.main_widget.hide()
+            self.sec_widget.show()
+            #self.hide()
         
     def button_function(self, i):
         if i == 1:
@@ -103,6 +144,12 @@ class Window(QWidget):
                 msg.setText("Cancel")
                 msg.setStandardButtons(QMessageBox.Ok)
                 msg.exec_()
+                
+    def Sec_Widget(self):
+        self.sec_widget = QWidget(self)
+        self.sec_widget.setGeometry(0,0,500,400)
+        self.sec_widget.setStyleSheet('background-color: white;')
+        self.sec_widget.hide()
         
     @pyqtSlot(int)
     def label_1_count_num(self, num):
