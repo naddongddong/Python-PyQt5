@@ -1,5 +1,8 @@
 # Python - PyQt5
 
-Reference
+This is the repository which is for PyQt5 project.
 
+You can refer to branch directory "Reference" for your any kind of work.
+
+Reference
 1.Creat Window (창 띄우기)
