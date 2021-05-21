@@ -1,1 +1,1 @@
-## This directory 
+## PyQt5 projects
