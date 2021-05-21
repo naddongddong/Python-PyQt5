@@ -10,7 +10,7 @@ class Main_Window(QWidget):
     def mainUI(self):
         self.setWindowTitle("Window Title")
         self.setFixedSize(500,400)
-        self.setWindowIcon(QIcon('icon.png'))
+        self.setWindowIcon(QIcon('icon.png')) # Set Window Icon to 'icon.png' file
         self.show()
         
 
