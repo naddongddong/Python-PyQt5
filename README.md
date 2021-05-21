@@ -1,3 +1,3 @@
-# pyqt5
+# Python - PyQt5
 
 This is the repository which is for PyQt5 project.
