@@ -2,7 +2,7 @@
 
 This is the repository which is for PyQt5 project.
 
-You can refer to branch directory "Reference" for your any kind of work.
+You can refer to all of the things in repository for your any kind of work.
 
 ## [Reference](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference)
 
