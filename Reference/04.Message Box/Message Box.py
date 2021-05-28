@@ -1,0 +1,39 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox
+from PyQt5.QtGui import QIcon
+
+class Main_Window(QWidget):    
+    def __init__(self):
+        super(Main_Window, self).__init__()
+        self.mainUI()
+    
+    def mainUI(self):
+        self.setWindowTitle("Window Title")
+        self.setFixedSize(500,400)
+        
+        self.btn = QPushButton("show message box",self)
+        self.btn.setGeometry(160,160,200,30)
+        self.btn.clicked.connect(self.show_message)
+        
+        self.show()
+        
+    def show_message(self):
+        reply = QMessageBox.question(self, "MessageBox", "Do you want to quit this program?",
+        QMessageBox.No | QMessageBox.Yes | QMessageBox.Cancel)
+        if reply == QMessageBox.Yes:
+            self.close()
+        elif reply == QMessageBox.No:
+            print("No")
+            QMessageBox.Close
+        else:
+            print('Cancel')
+            QMessageBox.Close
+    
+
+def StartGUI():
+    app = QApplication(sys.argv)
+    temp = Main_Window()
+    sys.exit(app.exec_())
+
+if __name__=='__main__':
+    StartGUI()
