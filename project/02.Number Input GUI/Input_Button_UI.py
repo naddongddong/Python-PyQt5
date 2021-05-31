@@ -63,8 +63,9 @@ class Ui_NumInput(object):
         elif i == 3 and j == 2: #dot
             if self.le_num.text().count('.') >= 1:
                 pass
-            if self.le_num.text() == '':
-                self.le_num.setText('0.')
             else:
-                self.le_num.setText(self.le_num.text() + '.')
-        
+                if self.le_num.text() == '':
+                    self.le_num.setText('0.')
+                else:
+                    self.le_num.setText(self.le_num.text() + '.')
+            

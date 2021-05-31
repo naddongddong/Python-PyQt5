@@ -38,8 +38,8 @@ class Main_Window(QWidget):
         self.input_num_widget.close()
     
     def enter(self):
-        if self.numui.le_num.text() == '0.':
-            self.numui.le_num.setText('0')
+        if self.numui.le_num.text()[-1:] == '.':
+            self.numui.le_num.setText(self.numui.le_num.text()[:-1])
         self.Edit.setText(self.numui.le_num.text())
         self.input_num_widget.close()
         
