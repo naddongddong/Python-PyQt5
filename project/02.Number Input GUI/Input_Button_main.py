@@ -22,7 +22,7 @@ class Main_Window(QWidget):
     def call_num_input(self, event):
         self.input_num_widget = QWidget()
         self.input_num_widget.setWindowFlags(Qt.FramelessWindowHint)
-        self.input_num_widget.setStyleSheet('background-color: #44546A')
+        self.input_num_widget.setStyleSheet('background-color: white; border:1px solid black;')
         self.input_num_widget.setWindowModality(2)
         
         self.numui.setupUi(self.input_num_widget)
@@ -38,6 +38,8 @@ class Main_Window(QWidget):
         self.input_num_widget.close()
     
     def enter(self):
+        if self.numui.le_num.text() == '0.':
+            self.numui.le_num.setText('0')
         self.Edit.setText(self.numui.le_num.text())
         self.input_num_widget.close()
         

@@ -22,7 +22,7 @@ class Ui_NumInput(object):
         
         self.le_num.setAlignment(Qt.AlignRight)
         self.le_num.setStyleSheet(
-            'QLineEdit {background-color: #A0A0A0; color: white; border: 1px; border-color: black; border-style: inset;}')
+            'QLineEdit {background-color: white; color: black; border: 1px; border-color: black; border-style: inset;}')
         self.le_num.setText('')
         self.le_num.setFont(QFont("Tahoma", 20))
         
@@ -37,7 +37,7 @@ class Ui_NumInput(object):
                 else:
                     self.button[i_1][i_2] = QPushButton(v_2, self.num_widget)
                     self.button[i_1][i_2].setGeometry(20 + 90 * i_2, 90 * (i_1 + 1), 75, 75)
-                    self.button[i_1][i_2].setStyleSheet('background-color: #333333; color: white; border : 0px; border-radius: 37px;')
+                    self.button[i_1][i_2].setStyleSheet('background-color: gray; color: white; border : 0px; border-radius: 37px;')
                     self.button[i_1][i_2].clicked.connect(lambda _, a = i_1, b = i_2:self.button_action(a, b))
         self.button[3][0].setGeometry(20, 360, 160, 75)
         
@@ -53,13 +53,18 @@ class Ui_NumInput(object):
                 pass
             else:
                 self.le_num.setText(self.le_num.text()[:]+'0')
-        elif i == 0 and j == 3:
+        elif i == 0 and j == 3: #back
             if self.le_num.text() == '' or len(self.le_num.text()) == 1:
                 self.le_num.setText('0')
             else:
                 self.le_num.setText(self.le_num.text()[:-1])
-        elif i == 1 and j == 3:
+        elif i == 1 and j == 3: #clear
             self.le_num.setText('0')
-        elif i == 2 and j == 3:
-            print(self.le_num.text())
-            return self.le_num.text()
+        elif i == 3 and j == 2: #dot
+            if self.le_num.text().count('.') >= 1:
+                pass
+            if self.le_num.text() == '':
+                self.le_num.setText('0.')
+            else:
+                self.le_num.setText(self.le_num.text() + '.')
+        
