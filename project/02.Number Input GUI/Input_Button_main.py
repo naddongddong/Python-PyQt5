@@ -22,15 +22,15 @@ class Main_Window(QWidget):
     def call_num_input(self, event):
         self.input_num_widget = QWidget()
         self.input_num_widget.setWindowFlags(Qt.FramelessWindowHint)
-        self.input_num_widget.setStyleSheet('background-color: white; border:1px solid black;')
+        self.input_num_widget.setStyleSheet('background-color: black; border:1px solid black;')
         self.input_num_widget.setWindowModality(2)
         
         self.numui.setupUi(self.input_num_widget)
         if self.Edit.text() != "Click to input number":
             self.numui.le_num.setText(self.Edit.text())
         
-        self.numui.button[3][3].clicked.connect(self.exit)
-        self.numui.button[2][3].clicked.connect(self.enter)
+        self.numui.button[3][3].mousePressEvent = lambda _, : self.exit()
+        self.numui.button[2][3].mousePressEvent = lambda _, : self.enter()
         
         self.input_num_widget.show()
         

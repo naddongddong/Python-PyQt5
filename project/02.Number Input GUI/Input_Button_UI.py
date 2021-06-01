@@ -1,5 +1,5 @@
-from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit
-from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QLabel
+from PyQt5.QtGui import QFont, QPixmap
 from PyQt5.QtCore import Qt
 
         
@@ -35,11 +35,18 @@ class Ui_NumInput(object):
                 if i_1 == 3 and i_2 ==  1:
                     pass
                 else:
-                    self.button[i_1][i_2] = QPushButton(v_2, self.num_widget)
+                    self.button[i_1][i_2] = QLabel(v_2, self.num_widget)
                     self.button[i_1][i_2].setGeometry(20 + 90 * i_2, 90 * (i_1 + 1), 75, 75)
-                    self.button[i_1][i_2].setStyleSheet('background-color: gray; color: white; border : 0px; border-radius: 37px;')
-                    self.button[i_1][i_2].clicked.connect(lambda _, a = i_1, b = i_2:self.button_action(a, b))
+                    self.button[i_1][i_2].setStyleSheet('background-color: gray; color: white; border-radius: 36px;')
+                    self.button[i_1][i_2].setFont(QFont("Tahoma", 20))
+                    self.button[i_1][i_2].setAlignment(Qt.AlignCenter)
+                    self.button[i_1][i_2].mousePressEvent = lambda _, a = i_1, b = i_2:self.button_action(a, b)
         self.button[3][0].setGeometry(20, 360, 160, 75)
+        self.pixmap = QPixmap('./back_arrow.png')
+        
+        self.pixmap = self.pixmap.scaledToHeight(73)
+        
+        self.button[0][3].setPixmap(self.pixmap)
         
     def button_action(self, i, j):
         n = self.button[i][j].text()
