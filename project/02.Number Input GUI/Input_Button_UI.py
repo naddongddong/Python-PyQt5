@@ -42,11 +42,13 @@ class Ui_NumInput(object):
                     self.button[i_1][i_2].setAlignment(Qt.AlignCenter)
                     self.button[i_1][i_2].mousePressEvent = lambda _, a = i_1, b = i_2:self.button_action(a, b)
         self.button[3][0].setGeometry(20, 360, 160, 75)
-        self.pixmap = QPixmap('./back_arrow.png')
+        self.pixmap_b = QPixmap('./back_arrow.png')
+        self.pixmap_b = self.pixmap_b.scaledToHeight(73)
+        self.button[0][3].setPixmap(self.pixmap_b)
         
-        self.pixmap = self.pixmap.scaledToHeight(73)
-        
-        self.button[0][3].setPixmap(self.pixmap)
+        self.pixmap_q = QPixmap('./quit_icon.png')
+        self.pixmap_q = self.pixmap_q.scaledToHeight(73)
+        self.button[3][3].setPixmap(self.pixmap_q)
         
     def button_action(self, i, j):
         n = self.button[i][j].text()
