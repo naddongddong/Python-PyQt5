@@ -1,6 +1,5 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox
-from PyQt5.QtGui import QIcon
 
 class Main_Window(QWidget):    
     def __init__(self):
