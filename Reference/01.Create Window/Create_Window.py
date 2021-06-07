@@ -12,12 +12,8 @@ class Main_Window(QWidget):
         self.setFixedSize(500,400)
         self.setWindowIcon(QIcon('icon.png')) # Set Window Icon to 'icon.png' file
         self.show()
-        
 
-def StartGUI():
+if __name__=='__main__':
     app = QApplication(sys.argv)
     temp = Main_Window()
     sys.exit(app.exec_())
-
-if __name__=='__main__':
-    StartGUI()
