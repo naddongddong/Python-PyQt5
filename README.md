@@ -12,7 +12,7 @@ You can refer to all of the things in repository for your any kind of works.
 #### [4. Message Box (메세지 박스)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/04.Message%20Box)
 #### [5. Pop-Up Window (팝업창 띄우기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/05.%20Pop-Up%20Window)
 #### [6. Radio Button (라디오 버튼 만들기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/06.%20Radio%20Button)
-#### [7. StyleSheet (스타일 꾸미기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/07.%20StyleSheet)
+#### [7. StyleSheet (스타일 꾸미기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/07.StyleSheet)
 
 
 
