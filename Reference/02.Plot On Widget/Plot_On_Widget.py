@@ -43,12 +43,8 @@ class Main_Window(QWidget):
         nx = int(start_position_second * sampling_rate)
         ny = int(length_sec * sampling_rate)
         return sn[nx:nx+ny] 
-        
-
-def StartGUI():
+    
+if __name__=='__main__':
     app = QApplication(sys.argv)
     temp = Main_Window()
     sys.exit(app.exec_())
-
-if __name__=='__main__':
-    StartGUI()
