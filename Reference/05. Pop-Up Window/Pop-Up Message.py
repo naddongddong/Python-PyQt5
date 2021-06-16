@@ -22,12 +22,8 @@ class Main_Window(QWidget):
         msg.setText("clicked")
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
-    
 
-def StartGUI():
+if __name__=='__main__':
     app = QApplication(sys.argv)
     temp = Main_Window()
     sys.exit(app.exec_())
-
-if __name__=='__main__':
-    StartGUI()
