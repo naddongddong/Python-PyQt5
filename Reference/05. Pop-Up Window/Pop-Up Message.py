@@ -12,14 +12,17 @@ class Main_Window(QWidget):
         
         self.btn = QPushButton("pop-up message",self)
         self.btn.setGeometry(160,160,200,30)
-        self.btn.clicked.connect(self.popup_message)
+        self.btn.clicked.connect(self.button_function)
         
         self.show()
+       
+    def button_function(self):
+        self.pop_up_message('Hello')
         
-    def popup_message(self):
+    def pop_up_message(self, str):
         msg = QMessageBox()
         msg.setWindowTitle("Pop-Up Message")
-        msg.setText("clicked")
+        msg.setText(str)
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
 
