@@ -42,11 +42,8 @@ class Main_Window(QWidget):
             self.numui.le_num.setText(self.numui.le_num.text()[:-1])
         self.Edit.setText(self.numui.le_num.text())
         self.input_num_widget.close()
-        
-def StartGUI():
+
+if __name__=='__main__':
     app = QApplication(sys.argv)
     temp = Main_Window()
     sys.exit(app.exec_())
-
-if __name__=='__main__':
-    StartGUI()
