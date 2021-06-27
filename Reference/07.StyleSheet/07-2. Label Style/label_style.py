@@ -19,8 +19,8 @@ class Main_Window(QWidget):
         #1. background-color, font-color
         self.labels[0].setStyleSheet('background-color: #44546A; color: white;')
 
-        #2. align
-        #self.labels[1].setAlignment(Qt.
+        #2. alignment
+        #self.labels[1].setAlignment(Qt.AlignCenter)
         
         self.show()
 
