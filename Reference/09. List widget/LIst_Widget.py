@@ -12,7 +12,7 @@ class Main_Window(QWidget):
         
         self.listwidget = QListWidget(self)
         self.listwidget.resize(300, 300)
-        #2
+        #1
         self.listwidget.insertItem(0, "Dog")
         self.listwidget.insertItem(1, "Cat")
         
