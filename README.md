@@ -15,7 +15,7 @@ You can refer to all of the things in repository for your any kind of works.
 #### [7. StyleSheet (스타일 꾸미기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/07.StyleSheet)
 #### [8. Combo Box (콤보 박스)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/08.%20Combo%20Box)
 #### [9. List Widget (리스트 위젯)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/09.%20List%20widget)
-
+#### [10. Table Widget (테이블 위젯)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/10.%20Table%20widget)
 ## [PyQt5 projects](https://github.com/naddongddong/Python-PyQt5/tree/main/project)
 
 #### [1.QThread](https://github.com/naddongddong/Python-PyQt5/tree/main/project/01.QThread)
