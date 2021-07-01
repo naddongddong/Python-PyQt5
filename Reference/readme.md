@@ -6,4 +6,7 @@
 #### [4. Message Box (메세지 박스)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/04.Message%20Box)
 #### [5. Pop-Up Window (팝업창 띄우기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/05.%20Pop-Up%20Window)
 #### [6. Radio Button (라디오 버튼 만들기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/06.%20Radio%20Button)
-#### [7. StyleSheet (스타일 꾸미기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/07.%20StyleSheet)
+#### [7. StyleSheet (스타일 꾸미기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/07.StyleSheet)
+#### [8. Combo Box (콤보 박스)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/08.%20Combo%20Box)
+#### [9. List Widget (리스트 위젯)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/09.%20List%20widget)
+#### [10. Table Widget (테이블 위젯)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/10.%20Table%20widget)
