@@ -22,10 +22,8 @@ class Main_Window(QWidget):
         if reply == QMessageBox.Yes:
             self.close()
         elif reply == QMessageBox.No:
-            print("No")
             QMessageBox.Close
         else:
-            print('Cancel')
             QMessageBox.Close
     
 
