@@ -9,7 +9,6 @@ class Main_Window(QWidget):
     def mainUI(self):
         self.setFixedSize(500,400)
         
-                #테이블 위젯 생성
         self.tableWidget = QTableWidget(self)
         self.tableWidget.resize(500, 400)
         self.tableWidget.setRowCount(15)
