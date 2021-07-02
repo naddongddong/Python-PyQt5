@@ -10,3 +10,5 @@
 #### [8. Combo Box (콤보 박스)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/08.%20Combo%20Box)
 #### [9. List Widget (리스트 위젯)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/09.%20List%20widget)
 #### [10. Table Widget (테이블 위젯)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/10.%20Table%20widget)
+#### [10. Progress Bar (프로그레스 바)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/11.%20Progress%20Bar)
+#### [12. Layout (레이아웃)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/12.%20Layout)
