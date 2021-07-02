@@ -1,8 +1,8 @@
 # Python - PyQt5
 
-This is the repository which is for PyQt5 project.
+This is the repository that can help me when I'm in PyQt5 project.
 
-You can refer to all of the things in repository for your any kind of works.
+Also you can refer to all of the things in repository for your any kind of works in your project.
 
 ## [Reference](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference)
 
