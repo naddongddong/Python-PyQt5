@@ -32,10 +32,7 @@ class Main_Window(QWidget):
         self.label.setStyleSheet('background-color: #EEEEEE;')
         self.label.setText('How To Creat Scroll Widget?')
         
-def StartGUI():
+if __name__=='__main__':
     app = QApplication(sys.argv)
     temp = Main_Window()
     sys.exit(app.exec_())
-
-if __name__=='__main__':
-    StartGUI()
