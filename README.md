@@ -18,7 +18,7 @@ Also you can refer to all of the things in repository for your any kind of works
 #### [10. Table Widget (테이블 위젯)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/10.%20Table%20widget)
 #### [10. Progress Bar (프로그레스 바)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/11.%20Progress%20Bar)
 #### [12. Layout (레이아웃)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/12.%20Layout)
-
+#### [13. Create New Window (새 창 띄우기)](https://github.com/naddongddong/Python-PyQt5/tree/main/Reference/13.%20Create%20New%20Window)
 ## [PyQt5 projects](https://github.com/naddongddong/Python-PyQt5/tree/main/project)
 
 #### [1.QThread](https://github.com/naddongddong/Python-PyQt5/tree/main/project/01.QThread)
